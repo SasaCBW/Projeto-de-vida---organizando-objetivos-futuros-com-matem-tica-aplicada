@@ -1,0 +1,1432 @@
+
+:root {
+  --navy: #17172e;
+  --navy-light: #252541;
+  --purple: #8d73ed;
+  --purple-light: #eee9ff;
+  --green: #b9f28c;
+  --paper: #f8f8fc;
+  --muted: #77778d;
+  --line: #e9e8f1;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--navy);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 4px;
+}
+
+.topbar {
+  min-height: 78px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -1.1px;
+  white-space: nowrap;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--purple);
+  color: white;
+  font-size: 23px;
+}
+
+.brand-highlight {
+  color: var(--purple);
+}
+
+.topbar nav {
+  display: flex;
+  gap: 31px;
+}
+
+.topbar nav a, .top-cta {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.topbar nav a {
+  color: #68687d;
+  transition: color .2s;
+}
+
+.topbar nav a:hover {
+  color: var(--purple);
+}
+
+.top-cta {
+  padding: 12px 17px;
+  border: 1px solid #ded9f5;
+  border-radius: 9px;
+  transition: .2s;
+}
+
+.top-cta:hover {
+  background: var(--purple-light);
+}
+
+.top-cta span {
+  color: var(--purple);
+  margin-left: 9px;
+}
+
+.hero {
+  min-height: 590px;
+  padding: 75px 9% 55px;
+  background:
+    radial-gradient(ellipse at 83% 46%, rgba(141, 115, 237, .15), transparent 38%),
+    linear-gradient(115deg, #fbfaff 0%, #f4f0ff 100%);
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(185, 242, 140, .18);
+}
+
+.hero h1, .section-heading h2, .calculator-intro h2,
+.goals-header h2, .steps-title h2, .final-cta h2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  letter-spacing: -2.4px;
+  line-height: 1.13;
+}
+
+.hero h1 {
+  font-size: clamp(37px, 4.3vw, 58px);
+  margin: 26px 0 22px;
+}
+
+.hero h1 span, .section-heading h2 span, .calculator-intro h2 span,
+.goals-header h2 span, .steps-title h2 span {
+  color: var(--purple);
+}
+
+.hero-content > p {
+  max-width: 510px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #696981;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  min-height: 47px;
+  padding: 12px 19px;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--purple);
+  color: white;
+  box-shadow: 0 8px 20px rgba(141, 115, 237, .22);
+}
+
+.button-primary:hover {
+  background: #765bdc;
+  box-shadow: 0 10px 25px rgba(141, 115, 237, .3);
+}
+
+.button-ghost {
+  background: rgba(255, 255, 255, .65);
+  border: 1px solid #e5e0f6;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #73728b;
+  font-size: 11px;
+  margin-top: 29px;
+}
+
+.note-check {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e3f8d5;
+  color: #447f30;
+  font-weight: 800;
+}
+
+.hero-visual {
+  min-height: 410px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.orbit {
+  border: 1px solid rgba(141, 115, 237, .22);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.orbit-one {
+  width: 390px;
+  height: 390px;
+}
+
+.orbit-two {
+  width: 315px;
+  height: 315px;
+  border-style: dashed;
+}
+
+.visual-card-main {
+  width: min(100%, 335px);
+  min-height: 300px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, .85);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 24px 70px rgba(53, 40, 102, .14);
+  position: relative;
+  z-index: 1;
+}
+
+.visual-top, .progress-label, .mini-stats, .chart-months {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visual-top {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  color: #9290a7;
+}
+
+.visual-dots {
+  letter-spacing: 3px;
+  color: var(--purple);
+}
+
+.visual-title {
+  margin: 20px 0;
+  font: 800 23px/1.25 "Manrope", sans-serif;
+  letter-spacing: -.8px;
+}
+
+.progress-label {
+  font-size: 10px;
+  color: #79788f;
+}
+
+.progress-label strong {
+  color: var(--purple);
+  font-size: 13px;
+}
+
+.progress-track {
+  height: 7px;
+  background: #eeeaf9;
+  border-radius: 10px;
+  margin: 9px 0 17px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 65%;
+  background: linear-gradient(90deg, var(--purple), #c1aaff);
+  border-radius: inherit;
+}
+
+.mini-stats {
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mini-stats div {
+  display: grid;
+  gap: 4px;
+}
+
+.mini-stats span {
+  color: #9492a6;
+  font-size: 9px;
+}
+
+.mini-stats strong {
+  font-size: 13px;
+}
+
+.chart {
+  height: 72px;
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  gap: 9px;
+  padding-top: 12px;
+}
+
+.chart-bar {
+  height: 50%;
+  flex: 1;
+  background: #dcd3ff;
+  border-radius: 4px 4px 1px 1px;
+}
+
+.chart-bar span {
+  display: block;
+  height: 45%;
+  margin-top: auto;
+  background: var(--purple);
+  border-radius: 4px 4px 1px 1px;
+}
+
+.bar-1 { height: 30%; }
+.bar-2 { height: 43%; }
+.bar-3 { height: 38%; }
+.bar-4 { height: 57%; }
+.bar-5 { height: 63%; }
+.bar-6 { height: 79%; }
+.bar-7 { height: 100%; }
+.bar-2 span { height: 55%; }
+.bar-3 span { height: 35%; }
+.bar-4 span { height: 65%; }
+.bar-5 span { height: 45%; }
+.bar-6 span { height: 75%; }
+.bar-7 span { height: 90%; }
+
+.chart-months {
+  font-size: 7px;
+  letter-spacing: .6px;
+  color: #a4a1b4;
+  margin-top: 5px;
+}
+
+.floating-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 15px;
+  background: white;
+  border: 1px solid #f0edf8;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(53, 40, 102, .11);
+}
+
+.floating-top {
+  top: 35px;
+  right: -8px;
+}
+
+.floating-bottom {
+  bottom: 24px;
+  left: -15px;
+}
+
+.float-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: #eee9ff;
+  color: var(--purple);
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.float-icon.green {
+  background: #e8f9dc;
+  color: #52863b;
+}
+
+.floating-card div {
+  display: grid;
+}
+
+.floating-card strong {
+  font-size: 10px;
+}
+
+.floating-card small {
+  font-size: 9px;
+  color: #9997aa;
+}
+
+.visual-star {
+  position: absolute;
+  color: var(--purple);
+}
+
+.star-one {
+  top: 17px;
+  left: 15px;
+  font-size: 27px;
+}
+
+.star-two {
+  right: 20px;
+  bottom: 24px;
+  font-size: 22px;
+}
+
+.hero-index {
+  position: absolute;
+  bottom: 17px;
+  left: 9%;
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  color: #9996b0;
+}
+
+.hero-index span {
+  color: var(--purple);
+  font-weight: 800;
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 27px 9%;
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.stats-strip > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 5px 12px;
+  border-right: 1px solid var(--line);
+}
+
+.stats-strip > div:last-child {
+  border-right: 0;
+}
+
+.stats-strip strong {
+  font: 800 20px "Manrope", sans-serif;
+  color: var(--purple);
+}
+
+.stats-strip span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #68677f;
+}
+
+.section {
+  padding: 95px 9%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+.dark-eyebrow {
+  color: var(--purple);
+}
+
+.section-heading h2, .steps-title h2 {
+  font-size: clamp(32px, 3.7vw, 45px);
+  margin-top: 17px;
+}
+
+.section-heading > p {
+  max-width: 380px;
+  color: #79788d;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.goal-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.goal-card {
+  padding: 27px;
+  min-height: 280px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(40, 35, 75, .08);
+}
+
+.goal-purple { background: #f0ebff; border-color: #e7dfff; }
+.goal-green { background: #eaf7e3; border-color: #dcefd2; }
+.goal-orange { background: #fff1e5; border-color: #f7e4d2; }
+
+.goal-number {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #7e7899;
+}
+
+.goal-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.7);
+  margin: 23px 0 16px;
+  font-size: 22px;
+}
+
+.goal-card h3, .formula-card h3 {
+  font: 800 18px "Manrope", sans-serif;
+  letter-spacing: -.4px;
+}
+
+.goal-card p, .formula-card p {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #75738a;
+  line-height: 1.85;
+}
+
+.goal-example {
+  margin-top: 22px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(80, 70, 110, .12);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.goal-example span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  color: #89869e;
+}
+
+.calculator-section {
+  padding: 90px 9%;
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 65px;
+  align-items: start;
+  background: var(--navy);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.calculator-section::before {
+  content: "";
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(177, 155, 255, .13);
+  border-radius: 50%;
+  position: absolute;
+  top: -210px;
+  left: -130px;
+  box-shadow: 0 0 0 45px rgba(177, 155, 255, .025), 0 0 0 90px rgba(177, 155, 255, .025);
+}
+
+.calculator-intro {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+}
+
+.calculator-intro h2 {
+  margin-top: 25px;
+  font-size: clamp(35px, 4vw, 49px);
+}
+
+.calculator-intro h2 span {
+  color: var(--green);
+}
+
+.calculator-intro > p {
+  max-width: 420px;
+  margin-top: 23px;
+  color: #b9b8d0;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.math-tip {
+  display: flex;
+  gap: 14px;
+  align-items: start;
+  margin-top: 42px;
+  padding: 19px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  background: rgba(255,255,255,.035);
+}
+
+.tip-symbol {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(185,242,140,.12);
+  color: var(--green);
+  font-size: 22px;
+}
+
+.math-tip strong {
+  font-size: 12px;
+}
+
+.math-tip p {
+  margin-top: 5px;
+  font-size: 11px;
+  color: #aaa9c1;
+  line-height: 1.8;
+}
+
+.calculator-card {
+  padding: 28px;
+  background: white;
+  color: var(--navy);
+  border-radius: 17px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  position: relative;
+  z-index: 1;
+}
+
+.calc-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 22px;
+  margin-bottom: 21px;
+  border-bottom: 1px solid var(--line);
+}
+
+.calc-kicker {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--purple);
+}
+
+.calc-heading h3 {
+  margin-top: 5px;
+  font: 800 21px "Manrope", sans-serif;
+  letter-spacing: -.7px;
+}
+
+.calc-badge {
+  padding: 6px 9px;
+  background: #e9f8df;
+  color: #4d8238;
+  border-radius: 5px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+.calculator-card label {
+  display: block;
+  margin: 16px 0 7px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.calculator-card input[type="text"],
+.calculator-card input[type="number"] {
+  width: 100%;
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid #e5e3ee;
+  border-radius: 8px;
+  background: #fcfbff;
+  color: var(--navy);
+  outline: none;
+  font-size: 12px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.calculator-card input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(141,115,237,.1);
+}
+
+.calculator-card input::placeholder {
+  color: #b0aec0;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.range-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.range-row input {
+  min-width: 0;
+  flex: 1;
+  accent-color: var(--purple);
+  cursor: pointer;
+}
+
+.range-value {
+  min-width: 83px;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: var(--purple-light);
+  text-align: center;
+  font-size: 10px;
+  color: #7160ba;
+}
+
+.range-value strong {
+  font-size: 15px;
+}
+
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa8b8;
+  font-size: 9px;
+  margin-top: 2px;
+}
+
+.calculate-button {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.result-panel {
+  display: none;
+  margin-top: 22px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f5f1ff;
+  border: 1px solid #e9e1ff;
+}
+
+.result-panel.visible {
+  display: block;
+  animation: rise-in .3s ease;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #777092;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.result-icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e0f6d2;
+  color: #4a8335;
+  font-size: 12px;
+}
+
+.result-caption {
+  margin-top: 14px;
+  color: #77758b;
+  font-size: 11px;
+}
+
+.result-value {
+  margin: 3px 0 18px;
+  font: 800 clamp(28px, 3vw, 36px) "Manrope", sans-serif;
+  color: var(--purple);
+  letter-spacing: -1.2px;
+  overflow-wrap: anywhere;
+}
+
+.result-value span {
+  font: 600 12px "DM Sans", sans-serif;
+  color: #89859e;
+  letter-spacing: 0;
+}
+
+.result-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #e3dcf7;
+  border-bottom: 1px solid #e3dcf7;
+}
+
+.result-details div {
+  display: grid;
+  gap: 5px;
+}
+
+.result-details span {
+  font-size: 9px;
+  color: #89869f;
+}
+
+.result-details strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.result-note {
+  font-size: 10px;
+  color: #89869f;
+  margin: 13px 0;
+  line-height: 1.7;
+}
+
+.button-dark {
+  width: 100%;
+  background: var(--navy);
+  color: white;
+}
+
+.button-dark:hover {
+  background: #343452;
+}
+
+.math-section {
+  background: white;
+}
+
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.formula-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fff;
+  transition: border-color .2s, transform .2s;
+}
+
+.formula-card:hover {
+  transform: translateY(-3px);
+  border-color: #cfc2ff;
+}
+
+.formula-icon {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 10px;
+  background: var(--purple-light);
+  color: var(--purple);
+  font: 700 22px "Manrope", sans-serif;
+  margin-bottom: 20px;
+}
+
+.formula-card h3 {
+  font-size: 16px;
+}
+
+.formula {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  margin: 14px 0;
+  padding: 11px;
+  border-radius: 7px;
+  background: #f7f5ff;
+  color: #7060b3;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.formula-example {
+  margin-top: 17px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 10px;
+  color: #8b899d;
+}
+
+.formula-example strong {
+  color: #393650;
+}
+
+.goals-section {
+  padding: 85px 9%;
+  background: #f0edfb;
+}
+
+.goals-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 32px;
+}
+
+.goals-header h2 {
+  font-size: clamp(34px, 4vw, 46px);
+  margin-top: 17px;
+}
+
+.goals-count {
+  display: grid;
+  gap: 2px;
+  padding: 14px 18px;
+  background: white;
+  border: 1px solid #e6e0f8;
+  border-radius: 10px;
+}
+
+.goals-count strong {
+  font: 800 25px "Manrope", sans-serif;
+  color: var(--purple);
+}
+
+.goals-count span {
+  font-size: 10px;
+  color: #89869c;
+}
+
+.goal-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 44px 20px;
+  border: 1px dashed #cfc6eb;
+  border-radius: 14px;
+  background: rgba(255,255,255,.55);
+  text-align: center;
+}
+
+.empty-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 13px;
+  background: white;
+  border-radius: 13px;
+  color: var(--purple);
+  font-size: 25px;
+}
+
+.empty-state h3 {
+  font: 800 18px "Manrope", sans-serif;
+}
+
+.empty-state p {
+  max-width: 420px;
+  margin: 8px auto 15px;
+  color: #77758b;
+  font-size: 12px;
+}
+
+.empty-state a {
+  color: #735bd3;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.saved-goal {
+  padding: 22px;
+  border: 1px solid #e4def5;
+  border-radius: 13px;
+  background: white;
+  min-width: 0;
+}
+
+.saved-goal-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.saved-goal h3 {
+  font: 800 16px "Manrope", sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.saved-goal .goal-subtitle {
+  margin-top: 5px;
+  color: #88859a;
+  font-size: 10px;
+}
+
+.delete-goal {
+  flex-shrink: 0;
+  border: 1px solid #e8e4f0;
+  background: white;
+  color: #8c879c;
+  border-radius: 7px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.delete-goal:hover {
+  background: #fff0f0;
+  color: #b64154;
+}
+
+.saved-progress-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 19px 0 7px;
+  font-size: 10px;
+  color: #89869b;
+}
+
+.saved-progress-head strong {
+  color: var(--purple);
+}
+
+.saved-progress-track {
+  height: 7px;
+  border-radius: 20px;
+  background: #efecf7;
+  overflow: hidden;
+}
+
+.saved-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--purple), #b8a4ff);
+}
+
+.saved-goal-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.saved-goal-stats div {
+  display: grid;
+  gap: 4px;
+}
+
+.saved-goal-stats span {
+  font-size: 9px;
+  color: #918ea1;
+}
+
+.saved-goal-stats strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.goal-update {
+  width: 100%;
+  margin-top: 17px;
+  padding: 10px;
+  border: 1px solid #e5dfff;
+  border-radius: 8px;
+  background: #f8f5ff;
+  color: #715acb;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.goal-update:hover {
+  background: var(--purple-light);
+}
+
+.storage-note {
+  margin-top: 18px;
+  color: #8b879e;
+  font-size: 10px;
+  text-align: center;
+}
+
+.steps-section {
+  padding: 90px 9%;
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 65px;
+  background: white;
+}
+
+.steps-title h2 {
+  margin-top: 17px;
+}
+
+.steps-list {
+  border-top: 1px solid var(--line);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 45px 1fr 22px;
+  gap: 17px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.step-num {
+  padding-top: 3px;
+  font: 800 14px "Manrope", sans-serif;
+  color: var(--purple);
+}
+
+.step h3 {
+  font: 800 15px "Manrope", sans-serif;
+}
+
+.step p {
+  margin-top: 6px;
+  color: #79778d;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.step-arrow {
+  color: #aaa3c6;
+  font-size: 19px;
+}
+
+.final-cta {
+  padding: 75px 20px 82px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(141,115,237,.25), transparent 60%),
+    var(--navy);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta .eyebrow {
+  justify-content: center;
+}
+
+.final-cta h2 {
+  margin-top: 22px;
+  font-size: clamp(36px, 4.8vw, 55px);
+}
+
+.final-cta h2 span {
+  color: var(--green);
+}
+
+.final-cta > p {
+  max-width: 500px;
+  margin: 18px auto 25px;
+  color: #b9b8cf;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.button-light {
+  background: var(--green);
+  color: #222b23;
+}
+
+.button-light:hover {
+  background: #d2ffb0;
+}
+
+.cta-decoration {
+  position: absolute;
+  top: 30px;
+  right: 12%;
+  color: rgba(185,242,140,.35);
+  font-size: 50px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 25px;
+  padding: 28px 9% 0;
+  background: white;
+}
+
+.footer .brand {
+  font-size: 19px;
+}
+
+.footer .brand-icon {
+  width: 29px;
+  height: 29px;
+  font-size: 19px;
+}
+
+.footer > p, .footer > a:last-of-type {
+  font-size: 10px;
+  color: #828095;
+}
+
+.footer > a:last-of-type {
+  font-weight: 700;
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+  color: #a09db1;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1500px) {
+  .hero, .section, .calculator-section, .goals-section,
+  .steps-section, .topbar, .stats-strip, .footer {
+    padding-left: max(9%, calc((100% - 1250px) / 2));
+    padding-right: max(9%, calc((100% - 1250px) / 2));
+  }
+}
+
+@media (max-width: 1000px) {
+  .topbar { padding: 0 4%; }
+  .topbar nav { gap: 15px; }
+  .hero, .section, .calculator-section, .goals-section,
+  .steps-section { padding-left: 6%; padding-right: 6%; }
+  .hero { gap: 20px; }
+  .hero-visual { transform: scale(.92); }
+  .calculator-section { gap: 30px; }
+  .stats-strip { padding-left: 4%; padding-right: 4%; }
+  .stats-strip span { font-size: 10px; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 70px; }
+  .topbar {
+    min-height: 68px;
+    padding: 0 5%;
+  }
+  .topbar nav { display: none; }
+  .brand { font-size: 20px; }
+  .top-cta { padding: 9px 11px; font-size: 10px; }
+  .hero {
+    padding: 55px 6% 60px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .hero h1 { font-size: clamp(37px, 8vw, 53px); }
+  .hero-content > p { font-size: 13px; }
+  .hero-visual {
+    min-height: 390px;
+    margin-top: 10px;
+    transform: none;
+  }
+  .orbit-one { width: 330px; height: 330px; }
+  .orbit-two { width: 270px; height: 270px; }
+  .visual-card-main { width: min(90%, 335px); }
+  .floating-top { right: 0; top: 20px; }
+  .floating-bottom { left: 0; bottom: 5px; }
+  .hero-index { left: 6%; bottom: 17px; }
+  .stats-strip {
+    grid-template-columns: 1fr 1fr;
+    padding: 15px 5%;
+  }
+  .stats-strip > div {
+    justify-content: start;
+    padding: 12px 7px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stats-strip > div:nth-child(odd) { border-right: 1px solid var(--line); }
+  .stats-strip > div:nth-child(n+3) { border-bottom: 0; }
+  .stats-strip strong { font-size: 18px; }
+  .section { padding: 65px 6%; }
+  .section-heading {
+    display: block;
+    margin-bottom: 28px;
+  }
+  .section-heading > p { margin-top: 18px; }
+  .section-heading h2 { font-size: 35px; }
+  .goal-cards { grid-template-columns: 1fr; gap: 13px; }
+  .goal-card { min-height: auto; padding: 24px; }
+  .goal-icon { margin: 16px 0 12px; }
+  .calculator-section {
+    grid-template-columns: 1fr;
+    padding: 65px 6%;
+    gap: 30px;
+  }
+  .calculator-intro { padding-top: 0; }
+  .calculator-intro h2 { font-size: 39px; }
+  .math-tip { margin-top: 25px; }
+  .calculator-card { padding: 20px; }
+  .calc-heading h3 { font-size: 18px; }
+  .formula-grid { grid-template-columns: 1fr; }
+  .formula-card { padding: 22px; }
+  .formula { min-height: auto; }
+  .goals-section { padding: 65px 6%; }
+  .goals-header { align-items: start; }
+  .goals-header h2 { font-size: 35px; }
+  .goals-count { padding: 10px; min-width: 100px; }
+  .goals-count strong { font-size: 21px; }
+  .goal-list { grid-template-columns: 1fr; }
+  .steps-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 65px 6%;
+  }
+  .steps-title h2 { font-size: 37px; }
+  .final-cta { padding: 65px 6%; }
+  .final-cta h2 { font-size: 39px; }
+  .cta-decoration { right: 5%; top: 10px; }
+  .footer {
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    padding: 25px 6% 0;
+  }
+  .footer > p { grid-column: 1 / -1; grid-row: 2; }
+  .footer > a:last-of-type { grid-column: 2; grid-row: 1; }
+  .footer-bottom { font-size: 7px; flex-wrap: wrap; }
+}
+
+@media (max-width: 400px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .button { width: 100%; }
+  .hero-visual { min-height: 360px; }
+  .visual-card-main { padding: 19px; }
+  .floating-card { padding: 9px; }
+  .floating-card small { font-size: 8px; }
+  .input-row { grid-template-columns: 1fr; gap: 0; }
+  .calc-badge { display: none; }
+  .goals-header { flex-direction: column; }
+  .step { grid-template-columns: 32px 1fr 16px; gap: 10px; }
+  .footer-bottom { display: grid; }
+}
